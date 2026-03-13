@@ -1,12 +1,19 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['api/index.ts'],
+  entry: ['src/app.ts'],
   format: ['esm'],
   platform: 'node',
   target: 'node20',
-  outDir: 'dist',
-  clean: true,
+  outDir: 'api',
   bundle: true,
   splitting: false,
+  sourcemap: false,
+  minify: false,
+  clean: true,
+  outExtension() {
+    return {
+      js: '.js',
+    }
+  },
 })
