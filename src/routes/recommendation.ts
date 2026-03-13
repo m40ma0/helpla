@@ -36,7 +36,7 @@ recommendation.post('/', async (c) => {
   const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
   const ai = new GoogleGenAI({apiKey: GEMINI_API_KEY});
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-3-flash-preview',
     contents: `Based off the current lists of foods that we have; [${inventoryList.join(', ')}], and based off the statement made by the user here; [${body.message}], suggest what foods from our list they might like.`,
   });
 
