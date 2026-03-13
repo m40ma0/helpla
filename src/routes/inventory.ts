@@ -1,15 +1,8 @@
 import { Hono } from "hono";
 import { db } from "../firebaseAdmin";
+import { isExpired } from "../utils";
 
 const inventory = new Hono()
-
-const isExpired = (value: unknown) => {
-  if (typeof value !== "number" || !Number.isFinite(value)) {
-    return false
-  }
-
-  return value * 1000 < Date.now()
-}
 
 // Add one food
 inventory.post('/', async (c) => {

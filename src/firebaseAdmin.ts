@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-
 const privateKey = process.env.FIREBASE_PRIVATE_KEY
 if (!privateKey) {
   throw new Error('Missing FIREBASE_PRIVATE_KEY')
