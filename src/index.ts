@@ -1,3 +1,4 @@
+import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import inventory from './routes/inventory'
 import order from './routes/order'
@@ -11,4 +12,4 @@ app.route("/customer", customer)
 
 app.get('/', (c) => c.text("Endpoint working"))
 
-export default app
+serve(app)
